@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# DonorHub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DonorHub, a platform that simplifies blood donation by connecting donors, hospitals, and organizations. The platform enables organizations and NGOs to manage blood records online, moving away from traditional Excel sheets.
 
-## Available Scripts
+Consists of 4 different users -- **Donar**,**Hospital**,**Organisation** and **Admin**
 
-In the project directory, you can run:
+## Demo
 
-### `npm start`
+https://drive.google.com/file/d/1piuASoqVhnLzzY9vGSVCBbGJOBnhvXuh/view?usp=drive_link
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Salient Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 4 different dashboards (Donar,Hospital,Organisation,Admin)
+- Analytics Page for Blood Records
+- Secured Authentication using JWT
+- Role based Authentication
 
-### `npm test`
+## Functionalities in each dashboard
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**_Donar Dashboard:_**
 
-### `npm run build`
+Upon successfull SignUp and Login, Donar is able to monitor the detials of organisations that he/she had donated and also the details of donations that he/she has done so far.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**_Hospital Dashboard:_**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Upon successfull SignUp and Login, Hospital is able to monitor the list of organisations that it is associated with and also the list of consumers details who has utilised the blood so far.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**_Organisations Dashboard:_**
 
-### `npm run eject`
+Upon successfull SignUp and Login, Organisations
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- can add the blood-in and blood-out data
+- can monitor the details of Donars
+- can monitor the detais of hospitals
+- can analyse the blood records using **_Analytics Page_**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**_Admin Dashboard:_**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Admin can monitor Details of Donars
+- Admin can monitor Details of hospitals
+- Admin can monitor Details of Organisations
+- Admin can also delete any of donars, hospitals and organisations if required.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Install Packages and Run the App
 
-## Learn More
+After successfully cloning my GitHub Repo, type the below command in integrated terminal in the same directory as that of the project.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  npm i
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The above command ensures to install all the required packages.
 
-### Code Splitting
+Repeat the above process in client directory too.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Type the below command to run the application
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+  npm start
+```

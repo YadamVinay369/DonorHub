@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Layout from "../../components/shared/Layout/Layout";
 import moment from "moment";
 import { toast } from "react-toastify";
@@ -9,7 +9,7 @@ const Organisation = () => {
   const [data, setData] = useState([]);
   const { user } = useSelector((state) => state.auth);
 
-  const getOrg = async () => {
+  const getOrg = useCallback(async () => {
     try {
       if (user?.role === "donar") {
         const { data } = await API.get("/inventory/get-organisation");
@@ -29,11 +29,12 @@ const Organisation = () => {
     } catch (error) {
       toast.error(error.response.data.message);
     }
-  };
+  }, [user?.role]);
 
   useEffect(() => {
     getOrg();
-  }, [user]);
+  }, [getOrg]);
+
   return (
     <Layout>
       <h3 className="mx-auto hospital-heading">
@@ -44,7 +45,7 @@ const Organisation = () => {
         <div className="container donar-data">
           <table className="table table-hover">
             <thead>
-              <tr>
+              <tr className="heading-fixed">
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>

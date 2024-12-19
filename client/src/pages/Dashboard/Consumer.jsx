@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import Layout from "../../components/shared/Layout/Layout";
 import API from "../../services/API";
 import { toast } from "react-toastify";
@@ -9,7 +9,7 @@ const Consumer = () => {
   const { user } = useSelector((state) => state.auth);
   const [data, setData] = useState([]);
 
-  const getDonars = async () => {
+  const getConsumers = useCallback(async () => {
     try {
       const { data } = await API.post("/inventory/get-inventory-hospital", {
         filters: {
@@ -24,11 +24,12 @@ const Consumer = () => {
     } catch (error) {
       toast.error(error.response.data.message);
     }
-  };
+  }, [user?._id]);
 
   useEffect(() => {
-    getDonars();
-  }, []);
+    getConsumers();
+  }, [getConsumers]);
+
   return (
     <Layout>
       <h3 className="mx-auto donar-heading">
@@ -39,7 +40,7 @@ const Consumer = () => {
         <div className="container donar-data">
           <table className="table table-hover">
             <thead>
-              <tr>
+              <tr className="heading-fixed">
                 <th scope="col">Blood Group</th>
                 <th scope="col">Inventory Type</th>
                 <th scope="col">Quantity</th>

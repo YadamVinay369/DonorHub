@@ -31,7 +31,7 @@ const Hospitals = () => {
         <div className="container donar-data">
           <table className="table table-hover">
             <thead>
-              <tr>
+              <tr className="heading-fixed">
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Phone</th>
