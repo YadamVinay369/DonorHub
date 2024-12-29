@@ -110,7 +110,7 @@ table{
 
 .analytics-container{
   width: 85%;
-  margin: 50px auto 0 auto;
+  margin: 100px auto 0 auto;
 }
 
 .analytics-card{
@@ -130,6 +130,13 @@ table{
 
 .analytics-card .card-footer{
   border-radius: 10px;
+}
+
+.analytics-card button{
+  width: 50px;
+  margin-left: 235px;
+  margin-top: 5px;
+  font-size: 16px;
 }
 
 .deleteIcon{
